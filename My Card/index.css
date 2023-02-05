@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    display: flex;
+    min-height: 100vh;/* 设置height:100vh时，即使没有内容，也可以撑开百分百的高度 */
+    justify-content: center;/*定义了项目在主轴上的对齐方式为居中 左右对齐*/
+    align-items: center;/*项目在侧轴上的对齐方式为居中，上下对齐*/
+    background-image: var(--background-image);/*线性渐变*/
+  }
+  .card{
+    width: 200px;
+    height: 200px;
+    /* width: 520px;
+    height: 340px; */
+    background-color: var(--background-color);
+    border-radius: 20px;
+    transition:0.5s ease-in-out;
+    overflow: hidden;
+    perspective: 1000px;
+  }
+  .card:hover{
+    width: 520px;
+    height: 340px;
+  }
+  img,.blackcontent{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--imgback-color);
+  }
+  img{
+    object-fit: cover;/*对图片保留原始比列，多余的会被裁剪,防止图片挤压变形*/
+  }
+  .imgbox,.imgboxblack{
+    position: absolute;/*绝对定位，脱离文档流*/
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    background-color: var(--background-color);
+    border-radius: 20px;
+    backface-visibility: hidden;/*隐藏背面*/
+    transition:  0.5s ease-in-out;/*transition: transition-property transition-duration transition-timing-function transition-delay;*/
+  }
+  .imgboxblack .blackcontent .word{
+    vertical-align:middle;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--imgbox-text-color);
+  }
+  .imgboxblack .blackcontent .x{
+    vertical-align:middle;
+    padding: 0px 5px;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--imgbox-x-color);
+    opacity: 0.5;
+  }
+  .imgbox{
+    transform:  rotateY(0deg);
+  }
+  .imgboxblack{
+    transform:  rotateY(-180deg);
+  }
+  .lefttop:hover .imgbox{
+    transform:  rotateY(180deg);
+  }
+  .lefttop:hover .imgboxblack{
+    transform: rotateY(0deg);
+  }
+  .card .right{
+    position: relative;
+    width: 320px;
+    height: 200px;
+    left: 200px;
+    padding: 20px;
+    text-align: center;
+    background-color:var(--background-color);
+    transition:  0.5s ease-in-out;
+  }
+  
+  .card .right .id{
+    font-size: 1.8em;
+    line-height: 1.8em;
+    font-weight: 600;
+    color: var(--id-color);
+  }
+  .card .right .numberdetails{
+    display: flex;
+    justify-content:space-between;/*两端对齐，项目之间的间隔都相等*/
+    background-color: var(--background-color);
+    border-radius: 5px;
+    margin-top: 5px;
+    transition:  0.5s ease-in-out;
+  }
+  .card .right .numberdetails div{
+    width: 80px;
+    padding-top: 5px;
+    background-color: var(--num-background-color);
+    border-radius: 5px;
+    font-size:0.85em;
+    font-weight: 600;
+    color:var(--num-text-color);
+  }
+  .card .right .numberdetails div p{
+    opacity: 0.5;
+  }
+  .card .right .numberdetails div span{
+    font-size: 1.2em;
+    line-height: 1.8em;
+    font-weight: 800;
+    color: var(--num-color);
+  }
+  .card .right .Btn{
+    display: flex;
+    justify-content:center;
+    margin-top: 10px;
+  }
+  .card .right .Btn button{
+    padding: 10px 40px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    border:none;
+    outline:none;/*去掉选中后的外边框*/
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .card .right .Btn .btnfollow{
+    background-color: var(--follow-background-color);
+    color: var(--follow-text-color);
+  }
+  .card .right .Btn .btnmore{
+    background-color: var(--more-background-color);
+    color: var(--more-text-color);
+  }
+  .card .bottom{
+    width: 500px;
+    height: 115px;
+    background-color: var(--information-background-color);
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  .card .bottom h3{
+    padding: 5px 20px;
+    color: var(--h3-color);
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 600;
+  }
+  .card .bottom div{
+    padding-left: 10px;
+    font-size: 0.85em;
+    font-weight: 400;
+    line-height: 1.6em;
+    color: var(--text-color);
+  }
+  .card .theme{
+    margin: 0 auto;
+    text-align: center;
+  }
+  .card .theme button{
+    border-radius: 5px;
+    border:none;
+    outline:none;/*去掉选中后的外边框*/
+    background-color:var(--button-color);
+    cursor: pointer;
+    transition:  0.5s ease-in-out;
+  }
